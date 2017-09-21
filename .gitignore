@@ -1,0 +1,23 @@
+# Intermediate and final build files
+*.[oa]
+*.exe
+*.dll
+*.lib
+
+# Compiled langs files
+*.mo
+
+# Code::Blocks specific files
+*.layout
+*.depend
+*.cdTemp
+
+# VS-Code settings folder
+.vscode
+
+# OSX specif files
+.DS_Store
+
+# Output and intermediate folders
+bin
+build
