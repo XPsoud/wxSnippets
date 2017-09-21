@@ -1,5 +1,5 @@
 
-SUBDIRS = TestApp
+SUBDIRS = TestApp StdPaths
 
 ifeq ($(OS),Windows_NT)
 OS_Detected=Windows

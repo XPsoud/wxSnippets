@@ -24,7 +24,8 @@ Each build result (executable file or app bundle under OS-X) will be placed in a
 
 ## Snippets availables ##
 
-None yet... sorry !
+- **TestApp**: A simple wxWidgets application to quickly make tests
+- **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
 
 ## To-Do ##
 
