@@ -1,0 +1,19 @@
+appIcon ICON "wxwin.ico"
+
+#include <windows.h>
+#include "wx/msw/rcdefs.h"
+
+// see "about isolated applications" topic in MSDN
+#ifdef ISOLATION_AWARE_ENABLED
+#define wxMANIFEST_ID 2
+#else
+#define wxMANIFEST_ID 1
+#endif
+
+#if defined(WX_CPU_AMD64)
+wxMANIFEST_ID 24 "wx/msw/amd64.manifest"
+#elif defined(WX_CPU_IA64)
+wxMANIFEST_ID 24 "wx/msw/ia64.manifest"
+#elif defined(WX_CPU_X86)
+wxMANIFEST_ID 24 "wx/msw/wx.manifest"
+#endif
