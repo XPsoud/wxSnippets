@@ -2,7 +2,6 @@
 #define __MAINFRAME_H_INCLUDED__
 
 #include <wx/wx.h>
-#include <wx/listctrl.h>
 
 class MainFrame: public wxFrame
 {
