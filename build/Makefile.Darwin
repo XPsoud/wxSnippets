@@ -1,0 +1,82 @@
+ifeq ($(OS_Detected), Darwin)
+#############################################################################
+# Application configuration
+#############################################################################
+
+AppName = $(PRJNAME)
+srcdir = ../$(PRJNAME)
+AppExe = $(srcdir)/bin/$(AppName)
+AppBundle = $(srcdir)/bin/$(AppName).app
+CmnDir = ../common
+
+SETFILE = SetFile
+NM = nm
+LIBS= `wx-config --libs`
+CXXFLAGS= `wx-config --cxxflags`
+INCLUDES= -I$(CmnDir)
+
+### Variables: ###
+
+CPP_SRC_FILES = $(wildcard $(srcdir)/*.cpp)
+OBJ_SRC_FILES = $(CPP_SRC_FILES:$(srcdir)/%.cpp=./$(PRJNAME)/%.o)
+DEP_SRC_FILES = $(OBJ_SRC_FILES:./$(PRJNAME)/%.o=./$(PRJNAME)/%.d)
+
+### Conditionally set variables: ###
+
+__app__mac_setfilecmd = \
+	$(SETFILE) -t APPL $(AppExe)
+
+### Targets: ###
+
+all: prebuild $(AppExe) $(App_Bundle) App_Bundle
+	@echo Making $(PRJNAME)
+
+clean:
+	rm $(PRJNAME)/*.o
+	rm $(PRJNAME)/*.d
+	rm $(AppExe)
+	rm -rf $(AppBundle)
+	rmdir $(PRJNAME)
+	rmdir $(srcdir)/bin
+
+prebuild:
+	@mkdir -p ./$(PRJNAME) ../Bin
+
+$(AppExe): $(OBJ_SRC_FILES)
+	@echo Linking executable $@
+	@g++ -o $@ $(OBJ_SRC_FILES) $(LIBS)
+	@echo Preparing executable for bundle
+	@$(__app__mac_setfilecmd)
+
+$(AppBundle)/Contents/PkgInfo: $(AppExe) ../Common/Info.plist.in ../Common/wxmac.icns
+	@echo Creating Application Bundle
+	@mkdir -p $(AppBundle)/Contents
+	@mkdir -p $(AppBundle)/Contents/MacOS
+	@mkdir -p $(AppBundle)/Contents/Resources
+
+	@sed -e "s/IDENTIFIER/`echo $(srcdir) | sed -e 's,\.\./,,g' | sed -e 's,/,.,g'`/" \
+	-e "s/EXECUTABLE/$(AppName)/" \
+	-e "s/VERSION/$(APP_VERSION)/" \
+	../Common/Info.plist.in >$(AppBundle)/Contents/Info.plist
+
+	@/bin/echo "APPL????" >$(AppBundle)/Contents/PkgInfo
+
+	@mv -f $(AppExe) $(AppBundle)/Contents/MacOS/$(AppName)
+	@cp -f ../Common/wxmac.icns $(AppBundle)/Contents/Resources/wxmac.icns
+
+App_Bundle: $(AppBundle)/Contents/PkgInfo
+
+infos :
+	@echo LIBS = $(LIBS)
+	@echo CPPFLAGS = $(CPPFLAGS)
+	@echo RCFLAGS = $(RCFLAGS)
+
+-include $(DEP_SRC_FILES)
+
+./$(PRJNAME)/%.o: $(srcdir)/%.cpp $(srcdir)/%.h
+	@echo Compiling $<
+	@g++ -c -MMD -o $@ $(CXXFLAGS) $(INCLUDES) $<
+
+.PHONY: all clean App_Bundle infos
+
+endif

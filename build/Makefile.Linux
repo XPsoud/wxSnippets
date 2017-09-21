@@ -1,0 +1,47 @@
+ifeq ($(OS_Detected), Linux)
+
+CPPFLAGS = `wx-config --cppflags` -DwxDEBUG_LEVEL=0
+APP_SRCDIR = ../$(PRJNAME)
+APP_OBJDIR = ./$(PRJNAME)
+COMMON_DIR = ../common
+OUTPUT_DIR = ../$(APP_SRCDIR)/bin
+
+EXEC_NAME = $(OUTPUT_DIR)/$(PRJNAME)
+INCLUDES = -I$(COMMON_DIR)
+
+CPP_SRC_FILES = $(wildcard $(APP_SRCDIR)/*.cpp)
+OBJ_SRC_FILES = $(CPP_SRC_FILES:$(APP_SRCDIR)/%.cpp=$(APP_OBJDIR)/%.o)
+DEP_SRC_FILES = $(OBJ_SRC_FILES:$(APP_OBJDIR)/%.o=$(APP_OBJDIR)/%.d)
+
+LIBS = `wx-config --libs` -lfontconfig
+
+all : $(EXEC_NAME)
+
+clean :
+	rm $(APP_OBJDIR)/*.o
+	rm $(APP_OBJDIR)/*.d
+	rmdir $(APP_OBJDIR)
+	rm $(EXEC_NAME)
+
+prebuild :
+	@mkdir -p $(APP_OBJDIR)
+	@mkdir -p $(OUTPUT_DIR)
+
+infos :
+	@echo LIBS = $(LIBS)
+	@echo CPPFLAGS = $(CPPFLAGS)
+	@echo RCFLAGS = $(RCFLAGS)
+
+-include $(DEP_SRC_FILES)
+
+$(EXEC_NAME) : prebuild $(OBJ_SRC_FILES)
+	@echo Linking executable file \"$(EXEC_NAME)\"
+	@g++ -o $(EXEC_NAME) $(OBJ_SRC_FILES) $(LIBS)
+
+$(APP_OBJDIR)/%.o: $(APP_SRCDIR)/%.cpp $(APP_SRCDIR)/%.h
+	@echo Compiling $<
+	@g++ -MMD $(CPPFLAGS) $(INCLUDES) -c $< -o $@
+
+.PHONY: clean infos
+
+endif
