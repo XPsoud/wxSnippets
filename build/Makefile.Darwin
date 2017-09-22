@@ -32,12 +32,12 @@ all: prebuild $(AppExe) $(App_Bundle) App_Bundle
 	@echo Making $(PRJNAME)
 
 clean:
-	rm $(PRJNAME)/*.o
-	rm $(PRJNAME)/*.d
-	rm $(AppExe)
+	rm -f $(PRJNAME)/*.o
+	rm -f $(PRJNAME)/*.d
+	rm -rf $(PRJNAME)
+	rm -f $(AppExe)
 	rm -rf $(AppBundle)
-	rmdir $(PRJNAME)
-	rmdir $(srcdir)/bin
+	rm -rf $(srcdir)/bin
 
 prebuild:
 	@mkdir -p ./$(PRJNAME) ../$(PRJNAME)/bin
@@ -76,6 +76,8 @@ infos :
 ./$(PRJNAME)/%.o: $(srcdir)/%.cpp $(srcdir)/%.h
 	@echo Compiling $<
 	@g++ -c -MMD -o $@ $(CXXFLAGS) $(INCLUDES) $<
+
+$(PRJNAME): App_Bundle
 
 .PHONY: all clean App_Bundle infos
 

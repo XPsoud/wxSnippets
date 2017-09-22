@@ -18,10 +18,10 @@ LIBS = `wx-config --libs` -lfontconfig
 all : $(EXEC_NAME)
 
 clean :
-	rm $(APP_OBJDIR)/*.o
-	rm $(APP_OBJDIR)/*.d
-	rmdir $(APP_OBJDIR)
-	rm $(EXEC_NAME)
+	rm -f $(APP_OBJDIR)/*.o
+	rm -f $(APP_OBJDIR)/*.d
+	rm -rf $(APP_OBJDIR)
+	rm -f $(EXEC_NAME)
 
 prebuild :
 	@mkdir -p $(APP_OBJDIR)
