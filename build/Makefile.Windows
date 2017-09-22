@@ -1,7 +1,7 @@
 # wxWidgets libs base folder
-WXWIN=C:\wx30
+WXWIN?=C:\wx30
 # Sub-folder of the wxWidgets libs config file
-WXCFG=gcc_dll\mswu
+WXCFG?=gcc_dll\mswu
 # Name / Path of the wxConfig executable
 WXCONFIG_EXE=wx-config.exe
 # Name of the executable to create

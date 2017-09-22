@@ -16,6 +16,8 @@ Under Windows, you must have a copy of the **wx-config** executable in your path
 
 You can override this using the command line. For example : **mingw32-make WXWIN=C:\wx31 WXCFG=gcc_lib\mswu**
 
+You can also set these variables as environment ones so you won't have to specify them each time : in this case you'll just have to call **mingw32-make**.
+
 To build all the snippets, just run the Makefile "as-is".
 
 To build one of the snippets, use the name of the snippets sub-folder as build target. For example : **make TestApp** (or under Windows **mingw32-make WXWIN=C:\wx31 WXCFG=gcc_lib\mswu TestApp**)
@@ -31,6 +33,5 @@ Each build result (executable file or app bundle under OS-X) will be placed in a
 
 Snippets to store here :
 - Settings manager
-- Simple wxWidgets test application
 - About box (wxWidgets provided and wxDialog one)
 - ...
