@@ -1,5 +1,5 @@
 
-SUBDIRS = TestApp StdPaths
+SUBDIRS = TestApp StdPaths AboutBoxDlg
 
 ifeq ($(OS),Windows_NT)
 OS_Detected=Windows
