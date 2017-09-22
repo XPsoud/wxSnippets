@@ -40,7 +40,7 @@ clean:
 	rmdir $(srcdir)/bin
 
 prebuild:
-	@mkdir -p ./$(PRJNAME) ../Bin
+	@mkdir -p ./$(PRJNAME) ../$(PRJNAME)/bin
 
 $(AppExe): $(OBJ_SRC_FILES)
 	@echo Linking executable $@
