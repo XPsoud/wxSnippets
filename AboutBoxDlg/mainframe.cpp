@@ -51,8 +51,10 @@ void MainFrame::CreateControls()
 #ifdef __WXMAC__
 	// On OSX, Exit and About menu entries are handled by the osx-specific menu
 	// So the File and Help menus became empty : we can delete them
-	menuBar->Remove(1); // Remove the Help menu
+	menuBar->Remove(1); // Remove and the Help menu
+	delete helpMenu;    // and delete it
 	menuBar->Remove(0); // Remove the File menu
+	delete fileMenu;    // and delete it
 #endif // __WXMAC__
 }
 
