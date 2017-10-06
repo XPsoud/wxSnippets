@@ -38,7 +38,7 @@ APP_DEP_FILES = $(APP_OBJ_FILES:$(BUILD_DIR)/%.o=$(BUILD_DIR)/%.d)
 APPRES_SRC_FILES = $(wildcard $(APP_SRCDIR)/*.rc)
 APPRES_OBJ_FILES = $(APPRES_SRC_FILES:$(APP_SRCDIR)/%.rc=$(BUILD_DIR)/%.res)
 
-WXLIBS = $(shell $(WXCONFIG) --libs base,core)
+WXLIBS = $(shell $(WXCONFIG) --libs base,core,xml)
 LIBS = $(WXLIBS) -lversion -lshlwapi -loleacc
 
 all : $(EXEC_NAME)
