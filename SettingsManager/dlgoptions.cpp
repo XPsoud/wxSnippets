@@ -75,7 +75,7 @@ void DlgOptions::CreateControls()
 				box=new wxStaticBoxSizer(wxVERTICAL, page, _T("Misc : "));
 					m_chkSingleInstance=new wxCheckBox(page, -1, _T("Allow only one instance of the application"));
 					box->Add(m_chkSingleInstance, 0, wxALL, 5);
-					m_chkCompSettings=new wxCheckBox(page, -1, _T("Compress settings file (for privacy)"));
+					m_chkCompSettings=new wxCheckBox(page, -1, _T("Compress settings file (for size and privacy)"));
 					box->Add(m_chkCompSettings, 0, wxLEFT|wxRIGHT|wxBOTTOM, 5);
 				pageszr->Add(box, 0, wxALL|wxEXPAND, 5);
 

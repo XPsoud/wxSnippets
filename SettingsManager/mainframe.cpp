@@ -1,12 +1,17 @@
 #include "mainframe.h"
 
 #include "main.h"
+#include "dlgoptions.h"
+#include "settingsmanager.h"
+
+#include <wx/display.h>
 
 #ifndef __WXMSW__
 #include "wxwin32x32.xpm"
 #endif // __WXMSW__
 
-MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, -1, title)
+MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, -1, title),
+	m_settings(SettingsManager::Get())
 {
 #ifdef __WXDEBUG__
 	wxPrintf(_T("Creating a \"MainFrame\" object\n"));
@@ -15,6 +20,40 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, -1, title)
 	SetIcon(wxICON(appIcon)); // Defining app icon
 
 	CreateControls();
+
+	int iStartPos=m_settings.GetMainWndStartupPos();
+	if (iStartPos==wxALIGN_NOT)
+	{
+		wxPoint pt;
+		m_settings.GetMainWndStartupPos(pt);
+		wxSize sz=m_settings.GetMainWndStartupSize();
+
+		if (sz==wxDefaultSize)
+		{
+			if (pt==wxDefaultPosition)
+				Maximize(true);
+			else
+				CenterOnScreen();
+		}
+		else
+		{
+			Move(pt);
+			SetSize(sz);
+		}
+	}
+	else
+	{
+
+		wxDisplay d;
+		wxRect rcD=d.GetClientArea();
+		int iWScr=rcD.GetWidth();
+		int iHScr=rcD.GetHeight();
+		wxSize sz=GetSize();
+		wxPoint pt=wxDefaultPosition;
+		pt.x=(((iStartPos&wxLEFT)==wxLEFT)?0:((iStartPos&wxRIGHT)==wxRIGHT)?iWScr-sz.GetWidth():(iWScr-sz.GetWidth())/2);
+		pt.y=(((iStartPos&wxTOP)==wxTOP)?0:((iStartPos&wxBOTTOM)==wxBOTTOM)?iHScr-sz.GetHeight():(iHScr-sz.GetHeight())/2);
+		Move(pt);
+	}
 
 	ConnectControls();
 }
@@ -37,19 +76,43 @@ void MainFrame::CreateControls()
 	wxPanel *pnl=new wxPanel(this, -1);
 
 	wxBoxSizer *szrMain=new wxBoxSizer(wxVERTICAL);
-		m_btnDoTest=new wxButton(pnl, -1, _T("Start test"));
-		szrMain->Add(m_btnDoTest, 0, wxALL, 5);
-		m_txtResult=new wxTextCtrl(pnl, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE);
-		szrMain->Add(m_txtResult, 1, wxLEFT|wxRIGHT|wxBOTTOM|wxEXPAND, 5);
+		m_btnPrefs=new wxButton(pnl, -1, _T("Edit Settings"));
+		szrMain->Add(m_btnPrefs, 0, wxALL, 5);
 	pnl->SetSizer(szrMain);
 }
 
 void MainFrame::ConnectControls()
 {
-	m_btnDoTest->Bind(wxEVT_BUTTON, &MainFrame::OnBtnTestClicked, this);
+	// General events handlers
+	Bind(wxEVT_SIZE, &MainFrame::OnSize, this);
+	Bind(wxEVT_MOVE, &MainFrame::OnMove, this);
+
+	m_btnPrefs->Bind(wxEVT_BUTTON, &MainFrame::OnBtnPrefsClicked, this);
 }
 
-void MainFrame::OnBtnTestClicked(wxCommandEvent &event)
+void MainFrame::OnSize(wxSizeEvent& event)
 {
-	wxMessageBox(_T("Test function terminated!"), _T("Done"), wxICON_INFORMATION|wxOK|wxCENTER);
+	if (!IsShown()) return;
+	if (IsMaximized())
+	{
+		m_settings.SetLastWindowRect(wxDefaultPosition, wxDefaultSize);
+	}
+	else
+	{
+		m_settings.SetLastWindowRect(GetPosition(), GetSize());
+	}
+	event.Skip();
+}
+
+void MainFrame::OnMove(wxMoveEvent& event)
+{
+	if (!IsShown()) return;
+	m_settings.SetLastWindowRect(GetPosition(), GetSize());
+	event.Skip();
+}
+
+void MainFrame::OnBtnPrefsClicked(wxCommandEvent &event)
+{
+	DlgOptions dlg(this);
+	dlg.ShowModal();
 }

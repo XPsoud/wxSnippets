@@ -196,12 +196,10 @@ bool SettingsManager::SaveSettings()
 		node->AddAttribute(_T("H"), wxString::Format(_T("%d"), m_szStartSize.GetHeight()));
 	}
 	// Settings file compression
-	if (m_bCompSettings)
-	{
-		node->SetNext(new wxXmlNode(NULL, wxXML_ELEMENT_NODE, _T("CompressSettingsFile")));
-		node = node->GetNext();
-		node->AddChild(new wxXmlNode(wxXML_TEXT_NODE, _T(""), _T("Yes")));
-	}
+	node->SetNext(new wxXmlNode(NULL, wxXML_ELEMENT_NODE, _T("CompressSettingsFile")));
+	node = node->GetNext();
+	node->AddChild(new wxXmlNode(wxXML_TEXT_NODE, _T(""), (m_bCompSettings?_T("Yes"):_T("No"))));
+
 	// Allowing (or not) multiple instances of the application
 	node->SetNext(new wxXmlNode(NULL, wxXML_ELEMENT_NODE, _T("MultiInstances")));
 	node = node->GetNext();
