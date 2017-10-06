@@ -745,6 +745,8 @@
 			<Add directory="../common" />
 		</ResourceCompiler>
 		<Unit filename="appversion.h" />
+		<Unit filename="dlgoptions.cpp" />
+		<Unit filename="dlgoptions.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Unit filename="mainframe.cpp" />
