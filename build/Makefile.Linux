@@ -32,6 +32,8 @@ infos :
 	@echo CPPFLAGS = $(CPPFLAGS)
 	@echo RCFLAGS = $(RCFLAGS)
 
+$(PRJNAME) : $(EXEC_NAME)
+
 -include $(DEP_SRC_FILES)
 
 $(EXEC_NAME) : prebuild $(OBJ_SRC_FILES)
