@@ -29,10 +29,12 @@ Each build result (executable file or app bundle under OS-X) will be placed in a
 - **TestApp**: A simple wxWidgets application to quickly make tests
 - **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
 - **AboutBoxDlg**: A _home made_ about box
+- **SettingsManager**: wxWidgets singleton class to manage an application's settings
 
 ## To-Do ##
 
 Snippets to store here :
-- Settings manager
+
 - About box (wxWidgets provided)
+- Guid class
 - ...
