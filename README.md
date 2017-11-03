@@ -30,11 +30,14 @@ Each build result (executable file or app bundle under OS-X) will be placed in a
 - **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
 - **AboutBoxDlg**: A _home made_ about box
 - **SettingsManager**: wxWidgets singleton class to manage an application's settings
+- **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
 
 ## To-Do ##
 
 Snippets to store here :
 
 - About box (wxWidgets provided)
-- Guid class
+- I18n
+- Single instance checker
+- Splash screen
 - ...
