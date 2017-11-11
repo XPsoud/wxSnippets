@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="wxGuid" />
+		<Option title="Guid" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="GccRelease32Dll">
@@ -723,6 +723,8 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="`wx-config --libs`" />
+					<Add option="-no-pie" />
+					<Add library="uuid" />
 				</Linker>
 			</Target>
 			<Environment>
