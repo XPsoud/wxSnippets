@@ -38,7 +38,7 @@ $(PRJNAME) : $(EXEC_NAME)
 
 $(EXEC_NAME) : prebuild $(OBJ_SRC_FILES)
 	@echo Linking executable file \"$(EXEC_NAME)\"
-	@g++ -o $(EXEC_NAME) $(OBJ_SRC_FILES) $(LIBS)
+	@g++ -o $(EXEC_NAME) -no-pie $(OBJ_SRC_FILES) $(LIBS)
 
 $(APP_OBJDIR)/%.o: $(APP_SRCDIR)/%.cpp $(APP_SRCDIR)/%.h
 	@echo Compiling $<
