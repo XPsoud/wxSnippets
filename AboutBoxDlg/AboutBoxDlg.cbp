@@ -730,6 +730,7 @@
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="../common" />
+			<Add directory="$(PROJECT_DIR)" />
 		</ResourceCompiler>
 		<Unit filename="aboutlogo.cpp" />
 		<Unit filename="aboutlogo.h" />

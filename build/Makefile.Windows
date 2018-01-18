@@ -24,7 +24,7 @@ endif
 
 WXCONFIG=$(WXCONFIG_EXE) --prefix=$(WXWIN) --wxcfg=$(WXCFG)
 CPPFLAGS = $(shell $(WXCONFIG) --cppflags) -O2 -DwxDEBUG_LEVEL=0
-RCFLAGS = -I$(WXWIN)/lib/$(WXCFG) -I$(WXWIN)\include -I$(COMMON_DIR)
+RCFLAGS = -I$(WXWIN)/lib/$(WXCFG) -I$(WXWIN)\include -I$(COMMON_DIR) -I$(APP_SRCDIR)
 
 EXEC_NAME = $(OUTPUT_DIR)/$(BASE_EXEC_NAME).exe
 INCLUDES = -I$(COMMON_DIR)
