@@ -1,5 +1,5 @@
 
-SUBDIRS = TestApp StdPaths AboutBoxDlg SettingsManager Guid
+SUBDIRS = AboutBoxDlg Guid SettingsManager StdPaths TestApp
 
 ifeq ($(OS),Windows_NT)
 OS_Detected=Windows

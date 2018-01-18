@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_file>
 	<Workspace title="wxSnippets">
-        <Project filename="TestApp/TestApp.cbp" />
-        <Project filename="StdPaths/StdPaths.cbp" />
-        <Project filename="AboutBoxDlg/AboutBoxDlg.cbp" />
-        <Project filename="SettingsManager/SettingsManager.cbp" />
-        <Project filename="Guid/Guid.cbp" />
+		<Project filename="AboutBoxDlg/AboutBoxDlg.cbp" />
+		<Project filename="Guid/Guid.cbp" />
+		<Project filename="SettingsManager/SettingsManager.cbp" />
+		<Project filename="StdPaths/StdPaths.cbp" />
+		<Project filename="TestApp/TestApp.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
