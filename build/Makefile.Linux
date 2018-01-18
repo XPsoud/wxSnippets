@@ -13,7 +13,7 @@ CPP_SRC_FILES = $(wildcard $(APP_SRCDIR)/*.cpp)
 OBJ_SRC_FILES = $(CPP_SRC_FILES:$(APP_SRCDIR)/%.cpp=$(APP_OBJDIR)/%.o)
 DEP_SRC_FILES = $(OBJ_SRC_FILES:$(APP_OBJDIR)/%.o=$(APP_OBJDIR)/%.d)
 
-LIBS = `wx-config --libs` -lfontconfig
+LIBS = `wx-config --libs` -lfontconfig -luuid
 
 all : $(EXEC_NAME)
 
@@ -38,7 +38,7 @@ $(PRJNAME) : $(EXEC_NAME)
 
 $(EXEC_NAME) : prebuild $(OBJ_SRC_FILES)
 	@echo Linking executable file \"$(EXEC_NAME)\"
-	@g++ -o $(EXEC_NAME) $(OBJ_SRC_FILES) $(LIBS)
+	@g++ -o $(EXEC_NAME) -no-pie $(OBJ_SRC_FILES) $(LIBS)
 
 $(APP_OBJDIR)/%.o: $(APP_SRCDIR)/%.cpp $(APP_SRCDIR)/%.h
 	@echo Compiling $<

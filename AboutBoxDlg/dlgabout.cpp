@@ -28,12 +28,10 @@ DlgAbout::DlgAbout(wxWindow *parent) : wxDialog(parent, -1, wxGetStockLabel(wxID
 			szrTop->Add(BmpCtrl, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5);
 			wxBoxSizer *szrRight=new wxBoxSizer(wxVERTICAL);
 				label=new wxStaticText(this, -1, sTitle);
-				wxFont bFnt=label->GetFont();
-				int i=bFnt.GetPointSize();
-				i+=2;
-				bFnt.SetPointSize(i);
-				bFnt.SetWeight(wxFONTWEIGHT_BOLD);
-				label->SetFont(bFnt);
+				wxFont fntTitle=label->GetFont();
+				fntTitle.MakeLarger();
+				fntTitle.MakeBold();
+				label->SetFont(fntTitle);
 				szrRight->Add(label, 0, wxALL|wxALIGN_CENTER, 5);
 				label=new wxStaticText(this, -1, _T(COPYRIGHT));
 				szrRight->Add(label, 0, wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_CENTER, 5);
