@@ -26,17 +26,17 @@ Each build result (executable file or app bundle under OS-X) will be placed in a
 
 ## Snippets availables ##
 
-- **TestApp**: A simple wxWidgets application to quickly make tests
-- **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
 - **AboutBoxDlg**: A _home made_ about box
-- **SettingsManager**: wxWidgets singleton class to manage an application's settings
+- **AboutBoxWx**: A _wxWidgets provided_ standard about box
 - **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
+- **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
+- **SettingsManager**: wxWidgets singleton class to manage an application's settings
+- **TestApp**: A simple wxWidgets application to quickly make tests
 
 ## To-Do ##
 
 Snippets to store here :
 
-- About box (wxWidgets provided)
 - I18n
 - Single instance checker
 - Splash screen

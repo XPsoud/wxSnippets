@@ -2,6 +2,7 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="wxSnippets">
 		<Project filename="AboutBoxDlg/AboutBoxDlg.cbp" />
+		<Project filename="AboutBoxWx/AboutBoxWx.cbp" />
 		<Project filename="Guid/Guid.cbp" />
 		<Project filename="SettingsManager/SettingsManager.cbp" />
 		<Project filename="StdPaths/StdPaths.cbp" />
