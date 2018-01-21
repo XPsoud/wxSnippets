@@ -156,7 +156,7 @@
 				<Option working_dir="./bin" />
 				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
 				<Option type="0" />
-				<Option compiler="gcc_tdm" />
+				<Option compiler="gcc64" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -200,7 +200,7 @@
 				<Option working_dir="./bin" />
 				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
 				<Option type="1" />
-				<Option compiler="gcc_tdm" />
+				<Option compiler="gcc64" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -243,7 +243,7 @@
 				<Option working_dir="./bin" />
 				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
 				<Option type="0" />
-				<Option compiler="gcc_tdm" />
+				<Option compiler="gcc64" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -290,108 +290,6 @@
 				<Environment>
 					<Variable name="ARCHI" value="64" />
 					<Variable name="COMP" value="Gcc" />
-					<Variable name="DBG_FLG" value="" />
-					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="31" />
-				</Environment>
-			</Target>
-			<Target title="Vc10Release32Dll">
-				<Option platforms="Windows;" />
-				<Option output="./bin/$(PROJECT_NAME)$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="./bin" />
-				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
-				<Option type="0" />
-				<Option compiler="msvc10" />
-				<Option projectCompilerOptionsRelation="1" />
-				<Option projectLinkerOptionsRelation="2" />
-				<Option projectIncludeDirsRelation="2" />
-				<Option projectResourceIncludeDirsRelation="2" />
-				<Compiler>
-					<Add option="/O2" />
-					<Add option="/Zc:wchar_t" />
-					<Add option="/EHsc" />
-					<Add option="/DwxUSE_UNICODE" />
-					<Add option="/DwxDEBUG_LEVEL=0" />
-					<Add option="/DWXUSINGDLL" />
-					<Add option="/D__WXMSW__" />
-					<Add directory="$(WX_DIR)/lib/vc_dll$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</Compiler>
-				<ResourceCompiler>
-					<Add directory="$(WX_DIR)/lib/vc_dll$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</ResourceCompiler>
-				<Linker>
-					<Add option="/MANIFEST:no" />
-					<Add library="wxmsw$(WX_VERSION)u$(DBG_FLG)_core.lib" />
-					<Add library="wxbase$(WX_VERSION)u$(DBG_FLG).lib" />
-					<Add library="gdi32.lib" />
-					<Add library="ole32.lib" />
-					<Add directory="$(WX_DIR)/lib/vc_dll$(ARCHI)" />
-				</Linker>
-				<Environment>
-					<Variable name="ARCHI" value="32" />
-					<Variable name="COMP" value="Vc10" />
-					<Variable name="DBG_FLG" value="" />
-					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
-				</Environment>
-			</Target>
-			<Target title="Vc10Release32Lib">
-				<Option platforms="Windows;" />
-				<Option output="./bin/$(PROJECT_NAME)$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="./bin" />
-				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
-				<Option type="0" />
-				<Option compiler="msvc10" />
-				<Option projectCompilerOptionsRelation="1" />
-				<Option projectLinkerOptionsRelation="2" />
-				<Option projectIncludeDirsRelation="2" />
-				<Option projectResourceIncludeDirsRelation="2" />
-				<Compiler>
-					<Add option="/MD" />
-					<Add option="/TP" />
-					<Add option="/GR" />
-					<Add option="/O2" />
-					<Add option="/Zc:wchar_t" />
-					<Add option="/EHsc" />
-					<Add option="/DwxUSE_UNICODE" />
-					<Add option="/DwxDEBUG_LEVEL=0" />
-					<Add option="/D__WXMSW__" />
-					<Add directory="$(WX_DIR)/lib/vc_lib$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</Compiler>
-				<ResourceCompiler>
-					<Add directory="$(WX_DIR)/lib/vc_lib$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</ResourceCompiler>
-				<Linker>
-					<Add option="/MANIFEST:no" />
-					<Add library="wxmsw$(WX_VERSION)u$(DBG_FLG)_core.lib" />
-					<Add library="wxbase$(WX_VERSION)u$(DBG_FLG).lib" />
-					<Add library="wxregexu$(DBG_FLG).lib" />
-					<Add library="wxpng$(DBG_FLG).lib" />
-					<Add library="wxzlib$(DBG_FLG).lib" />
-					<Add library="wxtiff$(DBG_FLG).lib" />
-					<Add library="wxjpeg$(DBG_FLG).lib" />
-					<Add library="wxexpat$(DBG_FLG).lib" />
-					<Add library="user32.lib" />
-					<Add library="shell32.lib" />
-					<Add library="comdlg32.lib" />
-					<Add library="comctl32.lib" />
-					<Add library="ole32.lib" />
-					<Add library="uuid.lib" />
-					<Add library="oleaut32.lib" />
-					<Add library="winspool.lib" />
-					<Add library="advapi32.lib" />
-					<Add library="gdi32.lib" />
-					<Add library="ws2_32.lib" />
-					<Add library="wldap32.lib" />
-					<Add directory="$(WX_DIR)/lib/vc_lib$(ARCHI)" />
-				</Linker>
-				<Environment>
-					<Variable name="ARCHI" value="32" />
-					<Variable name="COMP" value="Vc10" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
 					<Variable name="WX_VERSION" value="31" />
@@ -494,108 +392,6 @@
 				<Environment>
 					<Variable name="ARCHI" value="32" />
 					<Variable name="COMP" value="Vc14" />
-					<Variable name="DBG_FLG" value="" />
-					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="31" />
-				</Environment>
-			</Target>
-			<Target title="Vc10Release64Dll">
-				<Option platforms="Windows;" />
-				<Option output="./bin/$(PROJECT_NAME)$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="./bin" />
-				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
-				<Option type="0" />
-				<Option compiler="microsoft_visual_c_2010-x64" />
-				<Option projectCompilerOptionsRelation="1" />
-				<Option projectLinkerOptionsRelation="2" />
-				<Option projectIncludeDirsRelation="2" />
-				<Option projectResourceIncludeDirsRelation="2" />
-				<Compiler>
-					<Add option="/O2" />
-					<Add option="/Zc:wchar_t" />
-					<Add option="/EHsc" />
-					<Add option="/DwxUSE_UNICODE" />
-					<Add option="/DwxDEBUG_LEVEL=0" />
-					<Add option="/DWXUSINGDLL" />
-					<Add option="/D__WXMSW__" />
-					<Add directory="$(WX_DIR)/lib/vc_dll$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</Compiler>
-				<ResourceCompiler>
-					<Add directory="$(WX_DIR)/lib/vc_dll$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</ResourceCompiler>
-				<Linker>
-					<Add option="/MANIFEST:no" />
-					<Add library="wxmsw$(WX_VERSION)u$(DBG_FLG)_core.lib" />
-					<Add library="wxbase$(WX_VERSION)u$(DBG_FLG).lib" />
-					<Add library="gdi32.lib" />
-					<Add library="ole32.lib" />
-					<Add directory="$(WX_DIR)/lib/vc_dll$(ARCHI)" />
-				</Linker>
-				<Environment>
-					<Variable name="ARCHI" value="64" />
-					<Variable name="COMP" value="Vc10" />
-					<Variable name="DBG_FLG" value="" />
-					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
-				</Environment>
-			</Target>
-			<Target title="Vc10Release64Lib">
-				<Option platforms="Windows;" />
-				<Option output="./bin/$(PROJECT_NAME)$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="./bin" />
-				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
-				<Option type="0" />
-				<Option compiler="microsoft_visual_c_2010-x64" />
-				<Option projectCompilerOptionsRelation="1" />
-				<Option projectLinkerOptionsRelation="2" />
-				<Option projectIncludeDirsRelation="2" />
-				<Option projectResourceIncludeDirsRelation="2" />
-				<Compiler>
-					<Add option="/MD" />
-					<Add option="/TP" />
-					<Add option="/GR" />
-					<Add option="/O2" />
-					<Add option="/Zc:wchar_t" />
-					<Add option="/EHsc" />
-					<Add option="/DwxUSE_UNICODE" />
-					<Add option="/DwxDEBUG_LEVEL=0" />
-					<Add option="/D__WXMSW__" />
-					<Add directory="$(WX_DIR)/lib/vc_lib$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</Compiler>
-				<ResourceCompiler>
-					<Add directory="$(WX_DIR)/lib/vc_lib$(ARCHI)/mswu$(DBG_FLG)" />
-					<Add directory="$(WX_DIR)/include" />
-				</ResourceCompiler>
-				<Linker>
-					<Add option="/MANIFEST:no" />
-					<Add library="wxmsw$(WX_VERSION)u$(DBG_FLG)_core.lib" />
-					<Add library="wxbase$(WX_VERSION)u$(DBG_FLG).lib" />
-					<Add library="wxregexu$(DBG_FLG).lib" />
-					<Add library="wxpng$(DBG_FLG).lib" />
-					<Add library="wxzlib$(DBG_FLG).lib" />
-					<Add library="wxtiff$(DBG_FLG).lib" />
-					<Add library="wxjpeg$(DBG_FLG).lib" />
-					<Add library="wxexpat$(DBG_FLG).lib" />
-					<Add library="user32.lib" />
-					<Add library="shell32.lib" />
-					<Add library="comdlg32.lib" />
-					<Add library="comctl32.lib" />
-					<Add library="ole32.lib" />
-					<Add library="uuid.lib" />
-					<Add library="oleaut32.lib" />
-					<Add library="winspool.lib" />
-					<Add library="advapi32.lib" />
-					<Add library="gdi32.lib" />
-					<Add library="ws2_32.lib" />
-					<Add library="wldap32.lib" />
-					<Add directory="$(WX_DIR)/lib/vc_lib$(ARCHI)" />
-				</Linker>
-				<Environment>
-					<Variable name="ARCHI" value="64" />
-					<Variable name="COMP" value="Vc10" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
 					<Variable name="WX_VERSION" value="31" />
@@ -732,7 +528,7 @@
 			</Environment>
 		</Build>
 		<VirtualTargets>
-			<Add alias="Windows-All" targets="GccRelease32Dll;GccDebug32Dll;GccRelease32Lib;GccRelease64Dll;GccDebug64Dll;GccRelease64Lib;Vc10Release32Dll;Vc10Release32Lib;Vc14Release32Dll;Vc14Release32Lib;Vc10Release64Dll;Vc10Release64Lib;Vc14Release64Dll;Vc14Release64Lib;" />
+			<Add alias="Windows-All" targets="GccRelease32Dll;GccDebug32Dll;GccRelease32Lib;GccRelease64Dll;GccDebug64Dll;GccRelease64Lib;Vc14Release32Dll;Vc14Release32Lib;Vc14Release64Dll;Vc14Release64Lib;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
