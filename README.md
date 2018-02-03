@@ -4,9 +4,11 @@ It is a place where I'll put snippets of codes related to wxWidgets.
 
 Each of them is placed in its own subfolder, and should also contain all the needed for a buildable test application.
 
+They are available for C++, and for Python (Python 3 required). Please note that not all snippets are actually tranlated in Python (this is a _work in progress_)
+
 Each subfolder contains also a README file with a description of the snippet.
 
-## Building the snippets ##
+## Building the snippets (C++ version) ##
 
 Building the snippets can be done using the provided Makefile.
 
@@ -23,6 +25,12 @@ To build all the snippets, just run the Makefile "as-is".
 To build one of the snippets, use the name of the snippets sub-folder as build target. For example : **make TestApp** (or under Windows **mingw32-make WXWIN=C:\wx31 WXCFG=gcc_lib\mswu TestApp**)
 
 Each build result (executable file or app bundle under OS-X) will be placed in a **bin** subfolder into the snippet's one.
+
+## Running a snippet ##
+
+For the C++ version, you'll have to first build it (see previous section). As it is said just above, the corresponding executable is placed in a **bin** subfolder of the snippet's one.
+
+For the Python version, you'll find it in a **Python** subfolder of the snippet's one. Just run the _Main.py_ file to see it in action.
 
 ## Snippets availables ##
 
