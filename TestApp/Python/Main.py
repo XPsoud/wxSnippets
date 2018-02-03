@@ -4,7 +4,7 @@ from MainFrame import MainFrame
 
 class MyApp(wx.App):
     def OnInit(self):
-        print('Running wxPython ' + wx.version())
+        print('Running wxPython ' + wx.version() + ' - ' + wx.GetLibraryVersionInfo().VersionString)
         # Set Current directory to the one containing this file
         os.chdir(os.path.dirname(__file__))
 
