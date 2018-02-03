@@ -21,3 +21,6 @@
 # Output and intermediate folders
 bin
 build
+
+# Python cache directories
+__pycache__
