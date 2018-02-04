@@ -66,14 +66,14 @@ void MainFrame::CreateControls()
 	wxBoxSizer *szrMain=new wxBoxSizer(wxVERTICAL);
 		wxStaticBoxSizer *stbSzr=new wxStaticBoxSizer(wxVERTICAL, pnl, _T("Informations to show in the \"About\" box:"));
 
-			m_optInfos[OPT_MINIMAL] = new wxRadioButton(pnl, wxID_ANY, _T("Application's name only (minimal \"Aboud\" box)"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP);
-			stbSzr->Add(m_optInfos[0], 0, wxALL, 5);
+			m_optInfos[OPT_MINIMAL] = new wxRadioButton(pnl, wxID_ANY, _T("Application's name only (minimal \"About\" box)"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP);
+			stbSzr->Add(m_optInfos[OPT_MINIMAL], 0, wxALL, 5);
 
 			m_optInfos[OPT_MAXIMAL] = new wxRadioButton(pnl, wxID_ANY, _T("All available informations"));
-			stbSzr->Add(m_optInfos[1], 0, wxLEFT|wxRIGHT|wxBOTTOM, 5);
+			stbSzr->Add(m_optInfos[OPT_MAXIMAL], 0, wxLEFT|wxRIGHT|wxBOTTOM, 5);
 
 			m_optInfos[OPT_CUSTOM] = new wxRadioButton(pnl, wxID_ANY, _T("Let me select the informations I want to see"));
-			stbSzr->Add(m_optInfos[2], 0, wxLEFT|wxRIGHT|wxEXPAND, 5);
+			stbSzr->Add(m_optInfos[OPT_CUSTOM], 0, wxLEFT|wxRIGHT, 5);
 
 			wxBoxSizer *lnSzr=new wxBoxSizer(wxHORIZONTAL);
 				lnSzr->AddSpacer(10);
