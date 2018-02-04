@@ -128,15 +128,23 @@ class MainFrame(wx.Frame):
         # Create the menu bar
         menuBar = wx.MenuBar()
         # File menu
-        menu = wx.Menu()
-        menu.Append(wx.ID_EXIT)
-        menuBar.Append(menu, wx.GetStockLabel(wx.ID_FILE))
+        menuFile = wx.Menu()
+        menuFile.Append(wx.ID_EXIT)
+        menuBar.Append(menuFile, wx.GetStockLabel(wx.ID_FILE))
         # Help menu
-        menu = wx.Menu()
-        menu.Append(wx.ID_ABOUT)
-        menuBar.Append(menu, wx.GetStockLabel(wx.ID_HELP))
+        menuHelp = wx.Menu()
+        menuHelp.Append(wx.ID_ABOUT)
+        menuBar.Append(menuHelp, wx.GetStockLabel(wx.ID_HELP))
         # Assigne the menubar
         self.SetMenuBar(menuBar)
+
+        # On OS X, delete the created menus
+        # as the About and Exit items are handled by the OS specific menu
+        if wx.GetOsDescription()[:8] == 'Mac OS X':
+            menuBar.Remove(1)
+            del(menuHelp)
+            menuBar.Remove(0)
+            del(menuFile)
 
         # Adjust window size
         szrMain.SetSizeHints(self)
