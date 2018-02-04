@@ -6,7 +6,9 @@ class MyApp(wx.App):
     def OnInit(self):
         print('Running wxPython ' + wx.version() + ' - ' + wx.GetLibraryVersionInfo().VersionString)
         # Set Current directory to the one containing this file
-        os.chdir(os.path.dirname(__file__))
+        sDir = os.path.dirname(__file__)
+        if not sDir == '': # Perhaps we already are in the correct place
+            os.chdir(sDir)
 
         self.SetAppName('wxTestApp')
 
