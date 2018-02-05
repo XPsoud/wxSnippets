@@ -34,12 +34,12 @@ For the Python version, you'll find it in a **Python** subfolder of the snippet'
 
 ## Snippets availables ##
 
-- **AboutBoxDlg**: A _home made_ about box
-- **AboutBoxWx**: A _wxWidgets provided_ standard about box
-- **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
-- **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
-- **SettingsManager**: wxWidgets singleton class to manage an application's settings
-- **TestApp**: A simple wxWidgets application to quickly make tests
+- ![Cpp](/common/cpp.png) ![Py](/common/Python.png) **AboutBoxDlg**: A _home made_ about box
+- ![Cpp](/common/cpp.png) ![Py](/common/Python.png) **AboutBoxWx**: A _wxWidgets provided_ standard about box
+- ![Cpp](/common/cpp.png) **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
+- ![Cpp](/common/cpp.png) ![Py](/common/Python.png) **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
+- ![Cpp](/common/cpp.png) **SettingsManager**: wxWidgets singleton class to manage an application's settings
+- ![Cpp](/common/cpp.png) ![Py](/common/Python.png) **TestApp**: A simple wxWidgets application to quickly make tests
 
 ## To-Do ##
 
