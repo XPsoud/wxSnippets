@@ -24,20 +24,20 @@ DlgAbout::DlgAbout(wxWindow *parent) : wxDialog(parent, -1, wxGetStockLabel(wxID
 
 	wxBoxSizer *szrMain=new wxBoxSizer(wxVERTICAL);
 		wxBoxSizer *szrTop=new wxBoxSizer(wxHORIZONTAL);
-			BmpCtrl=new wxStaticBitmap(this, -1, wxGet_wxWidgets_png_Bitmap(), wxPoint(10,15));
+			BmpCtrl=new wxStaticBitmap(this, wxID_STATIC, wxGet_wxWidgets_png_Bitmap(), wxPoint(10,15));
 			szrTop->Add(BmpCtrl, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5);
 			wxBoxSizer *szrRight=new wxBoxSizer(wxVERTICAL);
-				label=new wxStaticText(this, -1, sTitle);
+				label=new wxStaticText(this, wxID_STATIC, sTitle);
 				wxFont fntTitle=label->GetFont();
 				fntTitle.MakeLarger();
 				fntTitle.MakeBold();
 				label->SetFont(fntTitle);
 				szrRight->Add(label, 0, wxALL|wxALIGN_CENTER, 5);
-				label=new wxStaticText(this, -1, _T(COPYRIGHT));
+				label=new wxStaticText(this, wxID_STATIC, _T(COPYRIGHT));
 				szrRight->Add(label, 0, wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_CENTER, 5);
-				label=new wxStaticText(this, -1,_(DESCRIPTION));
+				label=new wxStaticText(this, wxID_STATIC, _T(DESCRIPTION));
 				szrRight->Add(label, 0, wxLEFT|wxRIGHT|wxTOP|wxALIGN_CENTER, 5);
-				label=new wxStaticText(this, -1, sMsg);
+				label=new wxStaticText(this, wxID_STATIC, sMsg);
 				szrRight->Add(label, 0, wxALL|wxALIGN_CENTER, 5);
 			szrTop->Add(szrRight, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5);
 		szrMain->Add(szrTop, 0, wxALL, 5);
