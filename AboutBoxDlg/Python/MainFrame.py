@@ -18,7 +18,7 @@ class MainFrame(wx.Frame):
         self.SetStatusText(sMsg)
 
         # Add a panel to the frame (needed under Windows to have a nice background)
-        pnl = wx.Panel(self, wx.ID_ANY)
+        wx.Panel(self, wx.ID_ANY)
 
         # Create the menu bar
         menuBar = wx.MenuBar()
@@ -37,9 +37,9 @@ class MainFrame(wx.Frame):
         # as the About and Exit items are handled by the OS specific menu
         if wx.GetOsDescription()[:8] == 'Mac OS X':
             menuBar.Remove(1)
-            del(menuHelp)
+            del menuHelp
             menuBar.Remove(0)
-            del(menuFile)
+            del menuFile
 
     def _connectControls(self):
         self.Bind(wx.EVT_MENU, self._onMenuExitClicked, id=wx.ID_EXIT)

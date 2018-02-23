@@ -142,9 +142,9 @@ class MainFrame(wx.Frame):
         # as the About and Exit items are handled by the OS specific menu
         if wx.GetOsDescription()[:8] == 'Mac OS X':
             menuBar.Remove(1)
-            del(menuHelp)
+            del menuHelp
             menuBar.Remove(0)
-            del(menuFile)
+            del menuFile
 
         # Adjust window size
         szrMain.SetSizeHints(self)

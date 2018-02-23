@@ -1,4 +1,5 @@
-import os, wx
+import os
+import wx
 
 from MainFrame import MainFrame
 

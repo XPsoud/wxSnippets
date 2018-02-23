@@ -30,4 +30,4 @@ class MainFrame(wx.Frame):
         self._btnDoTest.Bind(wx.EVT_BUTTON, self._onBtnTestClicked)
 
     def _onBtnTestClicked(self, evt):
-        wx.MessageBox('Test function terminated!', 'Done', wx.ICON_INFORMATION|wx.OK|wx.CENTER);
+        wx.MessageBox('Test function terminated!', 'Done', wx.ICON_INFORMATION|wx.OK|wx.CENTER)
