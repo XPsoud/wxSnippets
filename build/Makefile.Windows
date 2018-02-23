@@ -39,7 +39,7 @@ APPRES_SRC_FILES = $(wildcard $(APP_SRCDIR)/*.rc)
 APPRES_OBJ_FILES = $(APPRES_SRC_FILES:$(APP_SRCDIR)/%.rc=$(BUILD_DIR)/%.res)
 
 WXLIBS = $(shell $(WXCONFIG) --libs base,core,xml,adv)
-LIBS = $(WXLIBS) -lversion -lshlwapi -loleacc
+LIBS = $(WXLIBS) -lversion -lshlwapi -loleacc -luxtheme
 
 all : $(EXEC_NAME)
 
