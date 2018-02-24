@@ -1,6 +1,6 @@
 import os
 import zlib
-from xml.etree.ElementTree import ElementTree, Element, SubElement, tostring
+from xml.etree.ElementTree import ElementTree, Element, SubElement
 import xml.etree.ElementTree as ETree
 import wx
 
@@ -65,11 +65,14 @@ class SettingsManager(object):
 
     def Initialize(self):
         self._bModified = False
-        s = wx.StandardPaths.Get().GetUserDataDir()
-        self._sDatasPath = s
+        sScriptDir = os.path.dirname(os.path.abspath(__file__))
+        if os.path.isfile(os.path.join(sScriptDir, self._sSettingsFName)):
+            self._sSettingsPath = sScriptDir
+        else:
+            self._sSettingsPath = wx.StandardPaths.Get().GetUserDataDir()
 
     def _getDatasPath(self):
-        return self._sDatasPath
+        return self._sSettingsPath
 
     def _isModified(self):
         return self._bModified
@@ -127,10 +130,10 @@ class SettingsManager(object):
 
     def ReadSettings(self):
         # Check whether the settings folder exists
-        if not os.path.isdir(self._sDatasPath):
+        if not os.path.isdir(self._sSettingsPath):
             return
         # Construct the settings file name and check if it exists
-        sFName = os.path.join(self._sDatasPath, self._sSettingsFName)
+        sFName = os.path.join(self._sSettingsPath, self._sSettingsFName)
         if not os.path.isfile(sFName):
             return
         # Try to load the xml settings file
@@ -190,10 +193,10 @@ class SettingsManager(object):
             node.text = 'No'
 
         # Check if the settings folder exists
-        if not os.path.isdir(self._sDatasPath):
-            os.makedirs(self._sDatasPath)
+        if not os.path.isdir(self._sSettingsPath):
+            os.makedirs(self._sSettingsPath)
         # Construct the settings file name and check if it exists
-        sFName = os.path.join(self._sDatasPath, self._sSettingsFName)
+        sFName = os.path.join(self._sSettingsPath, self._sSettingsFName)
         if os.path.isfile(sFName):
             os.remove(sFName)
         # Save the new xml file
