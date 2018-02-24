@@ -1,5 +1,7 @@
 import os
-from xml.etree.ElementTree import ElementTree, Element, SubElement
+import zlib
+from xml.etree.ElementTree import ElementTree, Element, SubElement, tostring
+import xml.etree.ElementTree as ETree
 import wx
 
 def startupStringToPos(value):
@@ -53,7 +55,7 @@ class SettingsManager(object):
     _bCompSettings = False
     # Other default values
     _bModified = False
-    _sSettingsFName = 'Settings.xml'
+    _sSettingsFName = 'settings'
 
     def __new__(cls):
         if cls._instance is None:
@@ -132,8 +134,15 @@ class SettingsManager(object):
         if not os.path.isfile(sFName):
             return
         # Try to load the xml settings file
-        tree = ElementTree()
-        tree.parse(sFName)
+        f = open(sFName, 'rb')
+        datas = f.read()
+        f.close()
+        if datas[0:5] != b'<?xml':
+            # Compressed file
+            datas = zlib.decompress(datas)
+
+        tree = ElementTree(ETree.fromstring(datas.decode()))
+        #tree.parse(sFName)
         rootNode = tree.getroot()
         #Read each xml entry
         for childNode in rootNode:
@@ -146,7 +155,6 @@ class SettingsManager(object):
                 iW = int(childNode.get('W', '-1'))
                 iH = int(childNode.get('H', '-1'))
                 self._szStartSize = wx.Size(iW, iH)
-                print('X=' + str(iX) + ' Y=' + str(iY))
             elif nodeName == 'MultiInstances':
                 self._bSingleInstanceOnly = (childNode.text != 'Allowed')
             elif nodeName == 'CompressSettingsFile':
@@ -189,9 +197,16 @@ class SettingsManager(object):
         if os.path.isfile(sFName):
             os.remove(sFName)
         # Save the new xml file
-        tree = ElementTree(rootNode)
-        tree.write(sFName, encoding='utf-8', xml_declaration=True)
-
+        if self._bCompSettings:
+            datas = ETree.tostring(rootNode, encoding='UTF8', method='xml')
+            datas = datas.replace(b'UTF8', b'UTF-8')
+            compDatas = zlib.compress(datas, 9)
+            f = open(sFName, 'wb')
+            f.write(compDatas)
+            f.close()
+        else:
+            tree = ElementTree(rootNode)
+            tree.write(sFName, encoding='UTF-8', xml_declaration=True)
 
     DatasPath = property(_getDatasPath)
     Modified = property(_isModified)
