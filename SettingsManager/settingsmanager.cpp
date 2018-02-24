@@ -141,7 +141,7 @@ bool SettingsManager::ReadSettings()
 		if (nodName==_T("MultiInstances"))
 		{
 			// Only one instance allowed ?
-			m_bSingleInstance=(node->GetAttribute(_T("Allowed"), _T("No"))==_T("No"));
+			m_bSingleInstance=(node->GetNodeContent()!=_T("Allowed"));
 		}
 		if (nodName==_T("CompressSettingsFile"))
 		{
@@ -203,7 +203,7 @@ bool SettingsManager::SaveSettings()
 	// Allowing (or not) multiple instances of the application
 	node->SetNext(new wxXmlNode(NULL, wxXML_ELEMENT_NODE, _T("MultiInstances")));
 	node = node->GetNext();
-	node->AddAttribute(_T("Allowed"), (m_bSingleInstance?_T("No"):_T("Yes")));
+	node->AddChild(new wxXmlNode(wxXML_TEXT_NODE, _T(""), (m_bSingleInstance?_T("Not-Allowed"):_T("Allowed"))));
 
 	wxXmlDocument doc;
 	doc.SetRoot(root);
