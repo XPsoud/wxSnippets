@@ -38,7 +38,7 @@ For the Python version, you'll find it in a **Python** subfolder of the snippet'
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **AboutBoxWx**: A _wxWidgets provided_ standard about box
 - ![Cpp](/common/cpp.png) **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
-- ![Cpp](/common/cpp.png) **SettingsManager**: wxWidgets singleton class to manage an application's settings
+- ![Cpp](/common/cpp.png) ![Py](/common/python.png) **SettingsManager**: wxWidgets singleton class to manage an application's settings
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **TestApp**: A simple wxWidgets application to quickly make tests
 
 ## To-Do ##
