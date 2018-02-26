@@ -5,6 +5,7 @@
 		<Project filename="AboutBoxWx/AboutBoxWx.cbp" />
 		<Project filename="AddRemoveCtrl/AddRemoveCtrl.cbp" />
 		<Project filename="Guid/Guid.cbp" />
+		<Project filename="PwdProtect/PwdProtect.cbp" />
 		<Project filename="SettingsManager/SettingsManager.cbp" />
 		<Project filename="StdPaths/StdPaths.cbp" />
 		<Project filename="TestApp/TestApp.cbp" />

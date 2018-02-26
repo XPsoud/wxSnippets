@@ -1,5 +1,5 @@
 
-SUBDIRS = AboutBoxDlg AboutBoxWx AddRemoveCtrl Guid SettingsManager StdPaths TestApp
+SUBDIRS = AboutBoxDlg AboutBoxWx AddRemoveCtrl PwdProtect Guid SettingsManager StdPaths TestApp
 
 ifeq ($(OS),Windows_NT)
 OS_Detected=Windows
