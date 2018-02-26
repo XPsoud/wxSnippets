@@ -38,10 +38,17 @@ For the Python version, you'll find it in a **Python** subfolder of the snippet'
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **AboutBoxWx**: A _wxWidgets provided_ standard about box
 - ![Cpp](/common/cpp.png) **AddRemoveCtrl**: A small example on how to use _**wxAddRemoveCtrl**_ (needs wxWidgets-3.1.0)
 - ![Cpp](/common/cpp.png) **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
-- ![Cpp](/common/cpp.png) **PwdProtect**: Password protected access to an application
+- ![Cpp](/common/cpp.png) ![Py](/common/python.png) **PwdProtect**: Password protected access to an application
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **SettingsManager**: wxWidgets singleton class to manage an application's settings
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **TestApp**: A simple wxWidgets application to quickly make tests
+
+
+## Other things shown by these snippets ##
+
+- Single instance checker (_**SettingsManager**_ snippet): It prevents the user from launching more than one instance of the application (this feature can be enabled or disabled using the settings dialog box)
+- Datas file compression (_**SettingsManager**_ snippet): It allows to compress a file during its creation process so it can't be edited by a simple text editor
+- Embedding images (or any other binary file) into the application (_**PwdProtect**_ snippet): It allows binary files such as images or other things to be integrated into the application without providing the file itself
 
 ## To-Do ##
 
