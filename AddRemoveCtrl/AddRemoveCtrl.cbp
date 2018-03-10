@@ -141,6 +141,7 @@
 					<Add library="libversion.a" />
 					<Add library="liboleacc.a" />
 					<Add library="libshlwapi.a" />
+					<Add library="libuxtheme.a" />
 					<Add directory="$(WX_DIR)/lib/gcc_lib$(ARCHI)" />
 				</Linker>
 				<Environment>
@@ -287,6 +288,7 @@
 					<Add library="libversion.a" />
 					<Add library="liboleacc.a" />
 					<Add library="libshlwapi.a" />
+					<Add library="libuxtheme.a" />
 					<Add directory="$(WX_DIR)/lib/gcc_lib$(ARCHI)" />
 				</Linker>
 				<Environment>
@@ -527,7 +529,7 @@
 				</Linker>
 			</Target>
 			<Environment>
-				<Variable name="WX_DIR" value="C:/wx$(WX_VERSION)" />
+				<Variable name="WX_DIR" value="C:\wx$(WX_VERSION)" />
 			</Environment>
 		</Build>
 		<VirtualTargets>
@@ -542,12 +544,12 @@
 			<Add directory="$(PROJECT_DIR)" />
 		</ResourceCompiler>
 		<Unit filename="appversion.h" />
+		<Unit filename="listboxadaptor.cpp" />
+		<Unit filename="listboxadaptor.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Unit filename="mainframe.cpp" />
 		<Unit filename="mainframe.h" />
-		<Unit filename="listboxadaptor.cpp" />
-		<Unit filename="listboxadaptor.h" />
 		<Unit filename="resources.rc">
 			<Option compilerVar="WINDRES" />
 			<Option target="GccRelease32Dll" />
