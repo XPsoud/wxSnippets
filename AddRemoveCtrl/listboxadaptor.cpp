@@ -15,7 +15,7 @@ wxWindow* ListBoxAdaptor::GetItemsCtrl() const
 
 bool ListBoxAdaptor::CanAdd() const
 {
-    return m_lbox->GetCount()<m_iMaxItems;
+    return m_iMaxItems>(int)m_lbox->GetCount();
 }
 
 bool ListBoxAdaptor::CanRemove() const
