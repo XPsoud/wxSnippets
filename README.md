@@ -8,6 +8,9 @@ They are available for C++, and for Python (Python 3 required). Please note that
 
 Each subfolder contains also a README file with a description of the snippet.
 
+## Binaries versions of C++ code ##
+Available for both 32 and 64 bits on [this site](https://wxstuff.xaviou.fr/index.html)
+
 ## Building the snippets (C++ version) ##
 
 Building the snippets can be done using the provided Makefile.
