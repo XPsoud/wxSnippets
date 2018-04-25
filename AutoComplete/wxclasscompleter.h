@@ -17,4 +17,13 @@ class wxClassCompleter : public wxTextCompleter
         wxString m_sPrefix;
 };
 
+class wxClassCompleterSimple : public wxTextCompleterSimple
+{
+    public:
+        wxClassCompleterSimple();
+        virtual ~wxClassCompleterSimple();
+        virtual void GetCompletions(const wxString &prefix, wxArrayString &res);
+    protected:
+    private:
+};
 #endif // __WXCLASSCOMPLETER_H_INCLUDED__

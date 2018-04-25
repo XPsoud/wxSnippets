@@ -37,14 +37,38 @@ void MainFrame::CreateControls()
 	// Add a panel to the frame (needed under Windows to have a nice frame)
 	wxPanel *pnl=new wxPanel(this, -1);
 
-	wxBoxSizer *szrMain=new wxBoxSizer(wxVERTICAL);
-		wxStaticText *label = new wxStaticText(pnl, wxID_STATIC, _T("Start entering a wxWidgets class name \nto see autocompletion working."));
-		szrMain->Add(label, 0, wxALL, 5);
-		m_txtEntry = new wxTextCtrl(pnl, -1, wxEmptyString);
-		szrMain->Add(m_txtEntry, 0, wxLEFT|wxRIGHT|wxBOTTOM|wxEXPAND, 5);
-	pnl->SetSizer(szrMain);
+	// Vars that will be used more than 1 time
+	wxStaticText *label;
+	wxStaticBoxSizer *stbSzr;
+	wxStaticBox *stBox;
 
-	m_txtEntry->AutoComplete(new wxClassCompleter());
+	wxBoxSizer *szrMain=new wxBoxSizer(wxVERTICAL);
+		stbSzr = new wxStaticBoxSizer(wxVERTICAL, pnl, _T("wxTextCompleterSimple:"));
+		stBox = stbSzr->GetStaticBox();
+			label = new wxStaticText(stBox, wxID_STATIC, _T("Start entering a wxWidgets class name in the wxTextCtrl below."));
+			stbSzr->Add(label, 0, wxLEFT|wxRIGHT|wxTOP, 5);
+			stbSzr->AddSpacer(2);
+			label = new wxStaticText(stBox, wxID_STATIC, _T("Auto-completion should start working at the 3rd char."));
+			stbSzr->Add(label, 0, wxLEFT|wxRIGHT|wxBOTTOM, 5);
+			m_txtEntry1 = new wxTextCtrl(stBox, -1, wxEmptyString);
+			stbSzr->Add(m_txtEntry1, 0, wxLEFT|wxRIGHT|wxBOTTOM|wxEXPAND, 5);
+		szrMain->Add(stbSzr, 0, wxALL|wxEXPAND, 5);
+
+		stbSzr = new wxStaticBoxSizer(wxVERTICAL, pnl, _T("wxTextCompleter:"));
+		stBox = stbSzr->GetStaticBox();
+			label = new wxStaticText(stBox, wxID_STATIC, _T("Start entering a wxWidgets class name in the wxTextCtrl below."));
+			stbSzr->Add(label, 0, wxLEFT|wxRIGHT|wxTOP, 5);
+			stbSzr->AddSpacer(2);
+			label = new wxStaticText(stBox, wxID_STATIC, _T("Auto-completion should start working at 1rst char."));
+			stbSzr->Add(label, 0, wxLEFT|wxRIGHT|wxBOTTOM, 5);
+			m_txtEntry2 = new wxTextCtrl(stBox, -1, wxEmptyString);
+			stbSzr->Add(m_txtEntry2, 0, wxLEFT|wxRIGHT|wxBOTTOM|wxEXPAND, 5);
+		szrMain->Add(stbSzr, 0, wxLEFT|wxRIGHT|wxBOTTOM|wxEXPAND, 5);
+	pnl->SetSizer(szrMain);
+	szrMain->SetSizeHints(this);
+
+	m_txtEntry1->AutoComplete(new wxClassCompleterSimple());
+	m_txtEntry2->AutoComplete(new wxClassCompleter());
 }
 
 void MainFrame::ConnectControls()

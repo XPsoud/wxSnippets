@@ -45,3 +45,33 @@ wxString wxClassCompleter::GetNext()
     // No more corresponding item
     return wxEmptyString;
 }
+
+
+wxClassCompleterSimple::wxClassCompleterSimple()
+{
+#ifdef __WXDEBUG__
+	wxPrintf(_T("Creating a \"wxClassCompleterSimple\" object\n"));
+#endif // __WXDEBUG__
+}
+
+wxClassCompleterSimple::~wxClassCompleterSimple()
+{
+#ifdef __WXDEBUG__
+	wxPrintf(_T("Destroying a \"wxClassCompleterSimple\" object\n"));
+#endif // __WXDEBUG__
+}
+
+void wxClassCompleterSimple::GetCompletions(const wxString& prefix, wxArrayString& res)
+{
+    // Don't return anything if prefix has less than 3 chas
+    if (prefix.Length()<3)
+        return;
+    wxString sPrfx = prefix.Lower();
+    for (int i=0; i<CLASSES_COUNT; ++i)
+    {
+        if (szClasses[i].Lower().StartsWith(sPrfx))
+        {
+            res.Add(szClasses[i]);
+        }
+    }
+}
