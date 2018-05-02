@@ -50,7 +50,7 @@ clean :
 	@if exist "$(PRJNAME)$(ARCHI)" del "$(PRJNAME)$(ARCHI)\*.d"
 	@if exist "$(PRJNAME)$(ARCHI)" del "$(PRJNAME)$(ARCHI)\*.res"
 	@if exist "$(PRJNAME)$(ARCHI)" rmdir "$(PRJNAME)$(ARCHI)"
-	@if exist "..\$(PRJNAME)\bin\$(BASE_EXEC_NAME).exe" del "..\$(PRJNAME)\bin\$(BASE_EXEC_NAME).exe"
+	@if exist "..\$(PRJNAME)\bin\$(BASE_EXEC_NAME)$(ARCHI).exe" del "..\$(PRJNAME)\bin\$(BASE_EXEC_NAME)$(ARCHI).exe"
 	@if exist "..\$(PRJNAME)\bin" rmdir "..\$(PRJNAME)\bin"
 
 prebuild :
