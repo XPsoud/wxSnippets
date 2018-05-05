@@ -42,7 +42,7 @@ clean:
 prebuild:
 	@mkdir -p ./$(PRJNAME) ../$(PRJNAME)/bin
 
-$(AppExe): $(OBJ_SRC_FILES)
+$(AppExe): prebuild $(OBJ_SRC_FILES)
 	@echo Linking executable $@
 	@g++ -o $@ $(OBJ_SRC_FILES) $(LIBS)
 	@echo Preparing executable for bundle
