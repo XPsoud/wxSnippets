@@ -13,7 +13,7 @@ class MainFrame(wx.Frame):
     def _createControls(self):
         # A Statusbar in the bottom of the window
         self.CreateStatusBar(1)
-        sMsg = 'wxPython ' + wx.version() + ' - ' + wx.GetLibraryVersionInfo().VersionString
+        sMsg = 'wxPython ' + wx.version()
         self.SetStatusText(sMsg)
 
         # Add a panel to the frame (needed under Windows to have a nice background)
