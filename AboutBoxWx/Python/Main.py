@@ -5,11 +5,9 @@ from MainFrame import MainFrame
 
 class MyApp(wx.App):
     def OnInit(self):
-        print('Running wxPython ' + wx.version() + ' - ' + wx.GetLibraryVersionInfo().VersionString)
+        print('Running wxPython ' + wx.version())
         # Set Current directory to the one containing this file
-        sDir = os.path.dirname(__file__)
-        if not sDir == '': # Perhaps we already are in the correct place
-            os.chdir(sDir)
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
         self.SetAppName('AboutBoxWx')
 

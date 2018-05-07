@@ -67,8 +67,10 @@ void MainFrame::CreateControls()
 	pnl->SetSizer(szrMain);
 	szrMain->SetSizeHints(this);
 
-	m_txtEntry1->AutoComplete(new wxClassCompleterSimple());
-	m_txtEntry2->AutoComplete(new wxClassCompleter());
+	bool bRes = m_txtEntry1->AutoComplete(new wxClassCompleterSimple());
+	bRes |= m_txtEntry2->AutoComplete(new wxClassCompleter());
+	if (!bRes)
+		wxMessageBox(_T("It seems that AutoCompletion isn't supported !"), _T("Error"), wxICON_ERROR|wxOK|wxCENTER);
 }
 
 void MainFrame::ConnectControls()
