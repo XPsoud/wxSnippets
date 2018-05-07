@@ -21,24 +21,28 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, -1, title),
 
 	CreateControls();
 
-	int iStartPos=m_settings.GetMainWndStartupPos();
+	int iStartPos = m_settings.GetMainWndStartupPos();
+	wxSize szStartSize = m_settings.GetMainWndStartupSize();
+	wxPoint ptStartPos;
+	m_settings.GetMainWndStartupPos(ptStartPos);
 	if (iStartPos==wxALIGN_NOT)
 	{
-		wxPoint pt;
-		m_settings.GetMainWndStartupPos(pt);
-		wxSize sz=m_settings.GetMainWndStartupSize();
-
-		if (sz==wxDefaultSize)
+		if (szStartSize == wxDefaultSize)
 		{
-			if (pt==wxDefaultPosition)
+			if (ptStartPos == wxDefaultPosition)
+			{
 				Maximize(true);
+			}
 			else
+			{
+				SetSize(MAINFRAME_MIN_SIZE);
 				CenterOnScreen();
+			}
 		}
 		else
 		{
-			Move(pt);
-			SetSize(sz);
+			Move(ptStartPos);
+			SetSize(szStartSize);
 		}
 	}
 	else
@@ -48,12 +52,15 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, -1, title),
 		wxRect rcD=d.GetClientArea();
 		int iWScr=rcD.GetWidth();
 		int iHScr=rcD.GetHeight();
-		wxSize sz=GetSize();
 		wxPoint pt=wxDefaultPosition;
-		pt.x=(((iStartPos&wxLEFT)==wxLEFT)?0:((iStartPos&wxRIGHT)==wxRIGHT)?iWScr-sz.GetWidth():(iWScr-sz.GetWidth())/2);
-		pt.y=(((iStartPos&wxTOP)==wxTOP)?0:((iStartPos&wxBOTTOM)==wxBOTTOM)?iHScr-sz.GetHeight():(iHScr-sz.GetHeight())/2);
+		if (szStartSize == wxDefaultSize)
+			szStartSize = MAINFRAME_MIN_SIZE;
+		pt.x=(((iStartPos&wxLEFT)==wxLEFT)?0:((iStartPos&wxRIGHT)==wxRIGHT)?iWScr-szStartSize.GetWidth():(iWScr-szStartSize.GetWidth())/2);
+		pt.y=(((iStartPos&wxTOP)==wxTOP)?0:((iStartPos&wxBOTTOM)==wxBOTTOM)?iHScr-szStartSize.GetHeight():(iHScr-szStartSize.GetHeight())/2);
 		Move(pt);
+		SetSize(szStartSize);
 	}
+	SetMinSize(MAINFRAME_MIN_SIZE);
 
 	ConnectControls();
 }

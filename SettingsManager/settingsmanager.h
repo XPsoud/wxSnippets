@@ -3,6 +3,7 @@
 
 #include <wx/wx.h>
 
+#define MAINFRAME_MIN_SIZE wxSize(400, 300)
 #define iStdXmlHeaderSize 38
 extern const wxChar* g_szStdXmlFileHeader1;
 extern const wxChar* g_szStdXmlFileHeader2;
