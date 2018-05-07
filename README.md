@@ -41,6 +41,7 @@ For the Python version, you'll find it in a **Python** subfolder of the snippet'
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **AboutBoxWx**: A _wxWidgets provided_ standard about box
 - ![Cpp](/common/cpp.png) ![No](/common/empty.png) **AddRemoveCtrl**: A small example on how to use _**wxAddRemoveCtrl**_ (needs wxWidgets-3.1.0)
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **AutoComplete**: A small example on how to use autocompletion with wxWidgets textboxes
+- ![Cpp](/common/cpp.png) ![Py](/common/python.png) **DropTarget**: A simple method to receive file(s) or directory(ies) dropped from the OS's file manager
 - ![Cpp](/common/cpp.png) ![No](/common/empty.png) **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
 - ![Cpp](/common/cpp.png) ![No](/common/empty.png) **Ipc** (Interprocess Communication): How to give the focus to an already running instance of an application
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **PwdProtect**: Password protected access to an application
@@ -54,6 +55,7 @@ For the Python version, you'll find it in a **Python** subfolder of the snippet'
 - Single instance checker (_**SettingsManager**_ snippet): It prevents the user from launching more than one instance of the application (this feature can be enabled or disabled using the settings dialog box)
 - Datas file compression (_**SettingsManager**_ snippet): It allows to compress a file during its creation process so it can't be edited by a simple text editor
 - Embedding images (or any other binary file) into the application (_**PwdProtect**_ snippet): It allows binary files such as images or other things to be integrated into the application without providing the file itself
+- Splitting a **wxString** into a **wxArrayString** using **wxStringTokenize** (_**DropTarget**_ snippet)
 
 ## To-Do ##
 
