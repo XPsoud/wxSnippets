@@ -44,6 +44,7 @@ For the Python version, you'll find it in a **Python** subfolder of the snippet'
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **DropTarget**: A simple method to receive file(s) or directory(ies) dropped from the OS's file manager
 - ![Cpp](/common/cpp.png) ![No](/common/empty.png) **Guid**: A small cross-platform (Windows, Linux and Max) Guid class
 - ![Cpp](/common/cpp.png) ![No](/common/empty.png) **Ipc** (Interprocess Communication): How to give the focus to an already running instance of an application
+- ![Cpp](/common/cpp.png) ![Py](/common/python.png) **NotifMsg**: How to show a notification message on the desktop
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **PwdProtect**: Password protected access to an application
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **StdPaths**: An application to show each values that can be returned by _**wxStandardPaths**_
 - ![Cpp](/common/cpp.png) ![Py](/common/python.png) **SettingsManager**: wxWidgets singleton class to manage an application's settings

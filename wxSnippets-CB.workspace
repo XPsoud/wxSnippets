@@ -8,6 +8,7 @@
 		<Project filename="DropTarget/DropTarget.cbp" />
 		<Project filename="Guid/Guid.cbp" />
 		<Project filename="Ipc/Ipc.cbp" />
+		<Project filename="NotifMsg/NotifMsg.cbp" />
 		<Project filename="PwdProtect/PwdProtect.cbp" />
 		<Project filename="SettingsManager/SettingsManager.cbp" />
 		<Project filename="StdPaths/StdPaths.cbp" />
