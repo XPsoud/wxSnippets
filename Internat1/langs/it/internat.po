@@ -1,0 +1,30 @@
+# wxWidgets internat sample
+# Copyright (C) 2009 wxWindows development team
+# This file is distributed under the same license as the wxWidgets package.
+# Francesco Montorsi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-24 13:39+0200\n"
+"PO-Revision-Date: 2018-08-24 13:40+0200\n"
+"Last-Translator: Francesco Montorsi <f18m_cpp217828@yahoo.it>\n"
+"Language-Team: wxWidgets translators <wx-translators@googlegroups.com>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: appversion.h:13
+msgid "wxWidgets I18N sample"
+msgstr "Campione wxWidget I18N"
+
+#: mainframe.cpp:54
+msgid "Welcome from wxWidgets"
+msgstr "Benvenuto da wxWidgets"

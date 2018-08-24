@@ -1,0 +1,28 @@
+# Message catalog file template for the wxWindows i18n sample
+# Copyright (C) 1999 wxWindows development team
+# Vadim Zeitlin <zeitlin@dptmaths.ens-cachan.fr>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wxWindows 2.0 i18n sample\n"
+"POT-Creation-Date: 2018-08-24 13:42+0200\n"
+"PO-Revision-Date: 2018-08-24 13:43+0200\n"
+"Last-Translator: Vadim Zeitlin <zeitlin@dptmaths.ens-cachan.fr>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: appversion.h:13
+msgid "wxWidgets I18N sample"
+msgstr "Exemple I18N wxWidgets"
+
+#: mainframe.cpp:54
+msgid "Welcome from wxWidgets"
+msgstr "Bienvenue de la part de wxWidgets"
