@@ -11,7 +11,11 @@ class DlgAbout(wx.Dialog):
     def _createInterface(self):
 
         sTitle = 'AboutBoxDlg (v1.0.0)'
-        sMsg = 'Made with wxPython ' + wx.version() + '\nBased on ' + wx.GetLibraryVersionInfo().VersionString
+        sVersion = wx.version()
+        pos = sVersion.find(' wxWidgets')
+        if pos != -1:
+            sVersion = sVersion[:pos]
+        sMsg = 'Made with wxPython ' + sVersion + '\nBased on ' + wx.GetLibraryVersionInfo().VersionString
         szrMain = wx.BoxSizer(wx.VERTICAL)
 
         szrTop = wx.BoxSizer(wx.HORIZONTAL)
