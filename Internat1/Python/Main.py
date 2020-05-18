@@ -1,12 +1,24 @@
 import os
+import sys
 import wx
 
 from MainFrame import MainFrame
 
 _ = wx.GetTranslation
 
+if sys.platform == 'darwin':
+    def MyGetSystemLanguage():
+        import locale
+        loc, enc = locale.getlocale()
+        return loc
+
 class MyApp(wx.App):
     locale = None
+    sysLng = None
+
+    def __init__(self, lng=wx.LANGUAGE_DEFAULT):
+        self.sysLng = lng
+        wx.App.__init__(self)
 
     def OnInit(self):
         print('Running wxPython ' + wx.version())
@@ -26,7 +38,7 @@ class MyApp(wx.App):
 
     def InitLanguage(self):
         langsAvail = {
-            "System default" : wx.LANGUAGE_DEFAULT,
+            "System default" : self.sysLng,
             "English"        : wx.LANGUAGE_ENGLISH,
             "French"         : wx.LANGUAGE_FRENCH,
             "German"         : wx.LANGUAGE_GERMAN,
@@ -51,5 +63,12 @@ class MyApp(wx.App):
             wx.LogError("Couldn't find/load the 'internat' catalog for locale '" + self.locale.GetCanonicalName() + "'.")
 
 if __name__ == '__main__':
-    app = MyApp()
+    iLng = wx.LANGUAGE_DEFAULT
+    if sys.platform == 'darwin':
+        sLng = MyGetSystemLanguage()
+        if not sLng is None:
+            lInfo = wx.Locale.FindLanguageInfo(sLng)
+            iLng = lInfo.Language
+
+    app = MyApp(iLng)
     app.MainLoop()
