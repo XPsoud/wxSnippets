@@ -46,7 +46,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="GccDebug32Dll">
@@ -89,7 +89,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="d" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="GccRelease32Lib">
@@ -148,7 +148,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="GccRelease64Dll">
@@ -157,7 +157,7 @@
 				<Option working_dir="./bin" />
 				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
 				<Option type="0" />
-				<Option compiler="gcc64" />
+				<Option compiler="gnu_gcc64_compiler" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -192,7 +192,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="GccDebug64Dll">
@@ -201,7 +201,7 @@
 				<Option working_dir="./bin" />
 				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
 				<Option type="1" />
-				<Option compiler="gcc64" />
+				<Option compiler="gnu_gcc64_compiler" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -235,7 +235,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="d" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="GccRelease64Lib">
@@ -244,7 +244,7 @@
 				<Option working_dir="./bin" />
 				<Option object_output="../build/$(PROJECT_NAME)/$(COMP)$(ARCHI)$(STATIC_FLG)$(DBG_FLG)" />
 				<Option type="0" />
-				<Option compiler="gcc64" />
+				<Option compiler="gnu_gcc64_compiler" />
 				<Option projectCompilerOptionsRelation="2" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Option projectIncludeDirsRelation="2" />
@@ -294,7 +294,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release32Dll">
@@ -336,7 +336,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release32Lib">
@@ -396,7 +396,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release64Dll">
@@ -438,7 +438,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release64Lib">
@@ -498,7 +498,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="31" />
+					<Variable name="WX_VERSION" value="32" />
 				</Environment>
 			</Target>
 			<Target title="Release-Linux">
@@ -526,7 +526,7 @@
 				</Linker>
 			</Target>
 			<Environment>
-				<Variable name="WX_DIR" value="C:\wx$(WX_VERSION)" />
+				<Variable name="WX_DIR" value="C:\wx$(WX_VERSION)x" />
 			</Environment>
 		</Build>
 		<VirtualTargets>

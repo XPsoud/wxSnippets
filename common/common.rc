@@ -15,13 +15,7 @@ appIcon ICON "wxwin.ico"
 #define wxMANIFEST_ID 1
 #endif
 
-#if defined(WX_CPU_AMD64)
-wxMANIFEST_ID 24 "wx/msw/amd64.manifest"
-#elif defined(WX_CPU_IA64)
-wxMANIFEST_ID 24 "wx/msw/ia64.manifest"
-#elif defined(WX_CPU_X86)
-wxMANIFEST_ID 24 "wx/msw/wx.manifest"
-#endif
+wxMANIFEST_ID 24 "wx/msw/wx_dpi_aware.manifest"
 
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION VERSION_MAJOR,VERSION_MINOR,VERSION_REV,0
