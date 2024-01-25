@@ -35,7 +35,7 @@ void MainFrame::CreateControls()
 	SetStatusText(sTxt);
 
 	// Add a panel to the frame (needed under Windows to have a nice frame)
-	wxPanel *pnl=new wxPanel(this, -1);
+	new wxPanel(this, -1);
 
 	// Create the menu bar
 	wxMenuBar *menuBar = new wxMenuBar();

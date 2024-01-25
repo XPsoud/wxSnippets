@@ -45,7 +45,7 @@ void SettingsManager::Initialize()
 #endif // ENABLE_DEBUG_MSG
 	// Full path of the application
 	wxFileName fname(wxStandardPaths::Get().GetExecutablePath());
-	fname.Normalize();
+	fname.Normalize(wxPATH_NORM_ABSOLUTE);
 	m_sAppPath=fname.GetPath(wxPATH_GET_VOLUME|wxPATH_GET_SEPARATOR);
 	if (!m_sAppPath.EndsWith(wxFileName::GetPathSeparator()))
 		m_sAppPath.Append(wxFileName::GetPathSeparator());
