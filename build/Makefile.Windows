@@ -1,5 +1,5 @@
 # wxWidgets libs base folder
-WXWIN?=C:\wx30
+WXWIN?=C:\wx32x
 # Sub-folder of the wxWidgets libs config file
 WXCFG?=gcc_dll\mswu
 # Name / Path of the wxConfig executable
@@ -8,7 +8,7 @@ WXCONFIG_EXE=wx-config.exe
 BASE_EXEC_NAME = $(PRJNAME)
 
 APP_SRCDIR = ../$(PRJNAME)
-OUTPUT_DIR = $(APP_SRCDIR)/bin
+OUTPUT_DIR = ../bin
 COMMON_DIR = ../common
 
 SYS := $(shell gcc -dumpmachine)
@@ -45,17 +45,18 @@ all : $(EXEC_NAME)
 
 $(PRJNAME) : $(EXEC_NAME)
 
-clean :
+minclean :
 	@if exist "$(PRJNAME)$(ARCHI)" del "$(PRJNAME)$(ARCHI)\*.o"
 	@if exist "$(PRJNAME)$(ARCHI)" del "$(PRJNAME)$(ARCHI)\*.d"
 	@if exist "$(PRJNAME)$(ARCHI)" del "$(PRJNAME)$(ARCHI)\*.res"
 	@if exist "$(PRJNAME)$(ARCHI)" rmdir "$(PRJNAME)$(ARCHI)"
-	@if exist "..\$(PRJNAME)\bin\$(BASE_EXEC_NAME)$(ARCHI).exe" del "..\$(PRJNAME)\bin\$(BASE_EXEC_NAME)$(ARCHI).exe"
-	@if exist "..\$(PRJNAME)\bin" rmdir "..\$(PRJNAME)\bin"
+
+clean: minclean
+	@if exist "..\bin\$(BASE_EXEC_NAME)$(ARCHI).exe" del "..\bin\$(BASE_EXEC_NAME)$(ARCHI).exe"
 
 prebuild :
 	@if not exist "$(PRJNAME)$(ARCHI)" mkdir "$(PRJNAME)$(ARCHI)"
-	@if not exist "..\$(PRJNAME)\bin" mkdir "..\$(PRJNAME)\bin"
+	@if not exist "..\bin" mkdir "..\bin"
 
 infos :
 	@echo LIBS = $(LIBS)
@@ -76,4 +77,4 @@ $(BUILD_DIR)/%.res: $(APP_SRCDIR)/%.rc
 	@echo Compiling $<
 	@windres.exe $(RCFLAGS) -J rc -O coff -i $< -o $@
 
-.PHONY: clean infos
+.PHONY: clean minclean infos

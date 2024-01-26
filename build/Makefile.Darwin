@@ -5,8 +5,8 @@ ifeq ($(OS_Detected), Darwin)
 
 AppName = $(PRJNAME)
 srcdir = ../$(PRJNAME)
-AppExe = $(srcdir)/bin/$(AppName)
-AppBundle = $(srcdir)/bin/$(AppName).app
+AppExe = ../bin/$(AppName)
+AppBundle = ../bin/$(AppName).app
 CmnDir = ../common
 
 SETFILE = SetFile
@@ -31,13 +31,14 @@ __app__mac_setfilecmd = \
 all: prebuild $(AppExe) $(App_Bundle) App_Bundle
 	@echo Making $(PRJNAME)
 
-clean:
+minclean:
 	rm -f $(PRJNAME)/*.o
 	rm -f $(PRJNAME)/*.d
 	rm -rf $(PRJNAME)
+
+clean: minclean
 	rm -f $(AppExe)
 	rm -rf $(AppBundle)
-	rm -rf $(srcdir)/bin
 
 prebuild:
 	@mkdir -p ./$(PRJNAME) ../$(PRJNAME)/bin

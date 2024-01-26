@@ -9,7 +9,9 @@ endif
 
 all: $(SUBDIRS)
 
-.PHONY: $(SUBDIRS) all clean infos
+.PHONY: $(SUBDIRS) all clean minclean infos
+
+minclean: $(SUBDIRS)
 
 clean: $(SUBDIRS)
 

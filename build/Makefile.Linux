@@ -4,7 +4,7 @@ CPPFLAGS = `wx-config --cppflags` -DwxDEBUG_LEVEL=0
 APP_SRCDIR = ../$(PRJNAME)
 APP_OBJDIR = ./$(PRJNAME)
 COMMON_DIR = ../common
-OUTPUT_DIR = $(APP_SRCDIR)/bin
+OUTPUT_DIR = ../bin
 
 EXEC_NAME = $(OUTPUT_DIR)/$(PRJNAME)
 INCLUDES = -I$(COMMON_DIR)
@@ -17,10 +17,12 @@ LIBS = `wx-config --libs` -lfontconfig -luuid
 
 all : $(EXEC_NAME)
 
-clean :
+minclean :
 	rm -f $(APP_OBJDIR)/*.o
 	rm -f $(APP_OBJDIR)/*.d
 	rm -rf $(APP_OBJDIR)
+
+clean : minclean
 	rm -f $(EXEC_NAME)
 
 prebuild :
