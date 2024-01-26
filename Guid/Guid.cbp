@@ -46,7 +46,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="GccDebug32Dll">
@@ -89,7 +89,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="d" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="GccRelease32Lib">
@@ -148,7 +148,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="GccRelease64Dll">
@@ -192,7 +192,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="GccDebug64Dll">
@@ -235,7 +235,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="d" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="GccRelease64Lib">
@@ -294,7 +294,7 @@
 					<Variable name="COMP" value="Gcc" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release32Dll">
@@ -336,7 +336,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release32Lib">
@@ -396,7 +396,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release64Dll">
@@ -438,7 +438,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="Vc14Release64Lib">
@@ -498,7 +498,7 @@
 					<Variable name="COMP" value="Vc14" />
 					<Variable name="DBG_FLG" value="" />
 					<Variable name="STATIC_FLG" value="S" />
-					<Variable name="WX_VERSION" value="32" />
+					<Variable name="WX_VERSION" value="33" />
 				</Environment>
 			</Target>
 			<Target title="Release-Linux">
