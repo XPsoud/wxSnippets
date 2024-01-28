@@ -6,6 +6,7 @@
 		<Project filename="AddRemoveCtrl/AddRemoveCtrl.cbp" />
 		<Project filename="AutoComplete/AutoComplete.cbp" />
 		<Project filename="DropTarget/DropTarget.cbp" />
+		<Project filename="FileType/FileType.cbp" />
 		<Project filename="Guid/Guid.cbp" />
 		<Project filename="Internat1/Internat1.cbp" />
 		<Project filename="Ipc/Ipc.cbp" />

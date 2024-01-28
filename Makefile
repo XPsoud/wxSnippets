@@ -1,5 +1,5 @@
 
-SUBDIRS = AboutBoxDlg AboutBoxWx AddRemoveCtrl AutoComplete DropTarget Guid Internat1 Ipc NotifMsg PwdProtect SettingsManager StdPaths TestApp
+SUBDIRS = AboutBoxDlg AboutBoxWx AddRemoveCtrl AutoComplete DropTarget FileType Guid Internat1 Ipc NotifMsg PwdProtect SettingsManager StdPaths TestApp
 
 ifeq ($(OS),Windows_NT)
 OS_Detected=Windows
