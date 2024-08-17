@@ -35,13 +35,13 @@ class MainFrame(wx.Frame):
             elif (mode & wx.RIGHT) == wx.RIGHT:
                 pt.x = iWScr - sz.GetWidth()
             else:
-                pt.x = (iWScr - sz.GetWidth()) / 2
+                pt.x = (iWScr - sz.GetWidth()) // 2
             if (mode & wx.TOP) == wx.TOP:
                 pt.y = 0
             elif (mode & wx.BOTTOM) == wx.BOTTOM:
                 pt.y = iHScr - sz.GetHeight()
             else:
-                pt.y = (iHScr - sz.GetHeight()) / 2
+                pt.y = (iHScr - sz.GetHeight()) // 2
             self.Move(pt)
             self.SetSize(sz)
 
